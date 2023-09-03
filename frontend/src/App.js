@@ -40,8 +40,12 @@ function App() {
     checkFunction();
   }, [])
   return (
-    <div className="App">
+    <div className="bg-[#8e9192]">
       <header className="App-header">
+        <div className="w-[100vw] h-[3vw] bg-[#00d5ff] mb-[9px]">
+          <img src="https://source.unsplash.com/random/?dog" className="mx-[14px] mt-auto mb-auto justify-center rounded-full bg-contain w-[37px] h-[37px] border-2"/>
+
+        </div>
         <div className='flex flex-wrap justify-left bg-yellow-300 w-[70vw]'>
           <Item text="Egg" image="https://source.unsplash.com/random/700x700/?egg"/>
           <Item text="Milk" image="https://source.unsplash.com/random/700x700/?milk"/>
