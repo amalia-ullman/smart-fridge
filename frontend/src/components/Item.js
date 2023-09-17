@@ -17,12 +17,12 @@ function Item({text, image}) {
   return (
     <div>
     { !ingredientbool && 
-      <div className="item border-4 border-green-800 text-center text-slate-950 w-[125px] m-[2px]" onClick={checkItem} >
+      <div className="font-['Orbitron'] item border-4 border-[#58c460] text-center text-slate-950 w-[150px] m-[2px] rounded-sm p-3 hover:shadow-lg hover:shadow-white" onClick={checkItem} >
           <img className="w-[100px] h-[100px] block ml-auto mr-auto" src={image}/>
           <p>{text}</p>
       </div> }
     { ingredientbool && 
-        <div className="item border-4 border-red-800 text-center text-slate-950 w-[125px] m-[2px] bg-slate-600" onClick={checkItem} >
+        <div className="font-['Orbitron'] item border-4 border-[#e83c4b] text-center text-slate-950 w-[150px] m-[2px] bg-slate-600 rounded-sm p-3 hover:shadow-lg hover:shadow-white" onClick={checkItem} >
           <img className="w-[100px] h-[100px] block ml-auto mr-auto" src={image}/>
           <p>{text}</p>
         </div>

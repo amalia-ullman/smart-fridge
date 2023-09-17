@@ -40,32 +40,39 @@ function App() {
     checkFunction();
   }, [])
   return (
-    <div className="bg-[#8e9192]">
+    <div className="bg-[#dadee0] w-[100vw] h-[100vh]">
       <header className="App-header">
-        <div className="w-[100vw] h-[3vw] bg-[#00d5ff] mb-[9px]">
-          <img src="https://source.unsplash.com/random/?dog" className="mx-[14px] mt-auto mb-auto justify-center rounded-full bg-contain w-[37px] h-[37px] border-2"/>
-
+        <div className="flex item-center w-[100vw] h-[3vw] bg-[#c3efff] mb-[9px]">
+          <img src="https://source.unsplash.com/random/?dog" className="mx-[14px] my-auto justify-center rounded-full bg-contain w-[37px] h-[35px] border-[2px] border-[#678f9e]"/>
+          <h1 className="font-['Orbitron'] text-2xl text-[#8b8eb3] my-auto">Super Smart Fridge</h1>
+          <FontAwesomeIcon icon="fa-sharp fa-solid fa-info" />
         </div>
-        <div className='flex flex-wrap justify-left bg-yellow-300 w-[70vw]'>
-          <Item text="Egg" image="https://source.unsplash.com/random/700x700/?egg"/>
-          <Item text="Milk" image="https://source.unsplash.com/random/700x700/?milk"/>
-          <Item text="Avocado" image="https://source.unsplash.com/random/700x700/?avocado"/>
-          <Item text="Basil" image="https://source.unsplash.com/random/700x700/?basil"/>
-          <Item text="Tomato" image="https://source.unsplash.com/random/700x700/?tomato"/>
-          <Item text="Pasta" image="https://source.unsplash.com/random/700x700/?pasta"/>
-        </div>
-        <button className='border-dashed border-emerald-700 bg-fuchsia-300 ml-auto mr-auto border-4 text-lime-500 block pr-10 pl-10 pt-5 pb-4 font-extrabold font-serif' onClick={() => findrecipes(localStorage)}>Pressme</button>
-        {recipes && <div id="recipes" className="bg-pink-700 w-[30vw]">
-          {Object.keys(recipes).map((key,index) => (
-              <div key={index}>
-                <img className="w-[100px]" src={`https://source.unsplash.com/random/700x700/?${key}`}/>
-                <h2>{key}</h2>
-                <p>{recipes[key][0]} of {recipes[key][1]}</p>
-              </div>
-          ))}
-        </div>
-        }
       </header>
+        <div className="flex p-3">
+          <div className='flex flex-wrap justify-left bg-[#7d949d] w-[59vw] shadow-inner shadow-[#07394d] rounded-md p-3'>
+            <Item text="Egg" image="https://source.unsplash.com/random/700x700/?egg"/>
+            <Item text="Milk" image="https://source.unsplash.com/random/700x700/?milk"/>
+            <Item text="Avocado" image="https://source.unsplash.com/random/700x700/?avocado"/>
+            <Item text="Basil" image="https://source.unsplash.com/random/700x700/?basil"/>
+            <Item text="Tomato" image="https://source.unsplash.com/random/700x700/?tomato"/>
+            <Item text="Pasta" image="https://source.unsplash.com/random/700x700/?pasta"/>
+          </div>
+          <div className="p-6">
+            {recipes && <div id="recipes" className="bg-[#c7b7f7] w-[49vw] flex shadow-2xl shadow-[#8b8eb3] rounded-lg">
+              {Object.keys(recipes).map((key,index) => (
+                  <div key={index} className="p-4 font-['Orbitron']">
+                    <img className="w-[150px]" src={`https://source.unsplash.com/random/700x700/?${key}`}/>
+                    <h2 className="text-center">{key}</h2>
+                    <p className="text-center">{recipes[key][0]} of {recipes[key][1]}</p>
+                  </div>
+              ))}
+            </div> }
+          </div>
+        </div>
+        <div className="w-7/12">
+          <button className="border-[#c3efff] bg-[#678f9e] ml-auto mr-auto border-[5px] rounded-sm  hover:shadow-[#678f9e] hover:shadow-lg text-[#faf8f5] block pr-10 pl-10 pt-5 pb-4 font-['Orbitron']" onClick={() => findrecipes(localStorage)}>Pressme</button>
+        </div>
+      
     </div>
   );
 }
