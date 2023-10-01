@@ -3,6 +3,9 @@ import './App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Item from './components/Item';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInfo } from '@fortawesome/free-solid-svg-icons';
+import  cloudsimg  from './Clouds-and-Stars.png';
 
 
 function App() {
@@ -40,12 +43,13 @@ function App() {
     checkFunction();
   }, [])
   return (
-    <div className="bg-[#dadee0] w-[100vw] h-[100vh]">
+    <div className="w-[100vw] h-[100vh] bg-{cloudsimg}" >
+      <img src={cloudsimg}/>
       <header className="App-header">
         <div className="flex item-center w-[100vw] h-[3vw] bg-[#c3efff] mb-[9px]">
           <img src="https://source.unsplash.com/random/?dog" className="mx-[14px] my-auto justify-center rounded-full bg-contain w-[37px] h-[35px] border-[2px] border-[#678f9e]"/>
           <h1 className="font-['Orbitron'] text-2xl text-[#8b8eb3] my-auto">Super Smart Fridge</h1>
-          <FontAwesomeIcon icon="fa-sharp fa-solid fa-info" />
+          <FontAwesomeIcon icon={faInfo} />
         </div>
       </header>
         <div className="flex p-3">
@@ -69,8 +73,8 @@ function App() {
             </div> }
           </div>
         </div>
-        <div className="w-7/12">
-          <button className="border-[#c3efff] bg-[#678f9e] ml-auto mr-auto border-[5px] rounded-sm  hover:shadow-[#678f9e] hover:shadow-lg text-[#faf8f5] block pr-10 pl-10 pt-5 pb-4 font-['Orbitron']" onClick={() => findrecipes(localStorage)}>Pressme</button>
+        <div className="w-[50vw]">
+          <button className="border-[#c3efff]  bg-[#678f9e] ml-auto mr-auto place-content-center border-[5px] rounded-sm  hover:shadow-[#678f9e] hover:shadow-lg text-[#faf8f5] block pr-10 pl-10 pt-5 pb-4 font-['Orbitron']" onClick={() => findrecipes(localStorage)}>Generate Recipes</button>
         </div>
       
     </div>
